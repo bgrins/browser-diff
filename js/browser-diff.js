@@ -71,5 +71,3 @@ $(function() {
   FileReaderJS.setupDrop(document.body, FILEREADER_OPTS);
   FileReaderJS.setupClipboard(document.body, FILEREADER_OPTS);
 });
-
-
