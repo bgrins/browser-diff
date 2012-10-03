@@ -1,7 +1,20 @@
-
-
 var dmp = new diff_match_patch();
+var loadedFiles = 0;
+var FILEREADER_OPTS = {
+  on: {
+    load: function(e, file) {
+      var el = (loadedFiles % 2) ? "#text2" : "#text1";
+      loadedFiles++;
+      $(el).text(e.target.result);
+    },
+    error: function(e, file) {
+    },
+    groupend: function() {
+      launch();
 
+    }
+  }
+};
 
 function getDiff(text1, text2, opts) {
   text1 = text1 || "";
@@ -47,25 +60,11 @@ $(function() {
   $("#launch").click(launch);
   $("textarea").bind("keyup change", launch);
   launch();
+
+
+  FileReaderJS.setupInput($('#file-input')[0], FILEREADER_OPTS);
+  FileReaderJS.setupDrop(document.body, FILEREADER_OPTS);
+  FileReaderJS.setupClipboard(document.body, FILEREADER_OPTS);
 });
 
 
-var loadedFiles = 0;
-
-var opts = {
-  on: {
-    load: function(e, file) {
-      var el = (loadedFiles % 2) ? "#text2" : "#text1";
-      loadedFiles++;
-      $(el).text(e.target.result);
-    },
-    error: function(e, file) {
-    },
-    groupend: function() {
-      launch();
-
-    }
-  }
-};
-
-FileReaderJS.setupDrop(document.body, opts);
