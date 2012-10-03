@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>browser-diff</title>
+    <meta name="description" content="Read differences between text files in your browser">
+    <meta name="author" content="Brian Grinstead">
+
+    <link rel="shortcut icon" href="home-page/favicon.ico">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+  </head>
+<body>
+
+
+  <div class="container-fluid">
+    <div class='content'>
+      <div class='inner-content'>
+
+        <div class="header">
+
+
+          <H1>browser-diff</H1>
+          <hr />
+
+          <div class="alert alert-info">
+          <h2>Find text differences in your browser</h2>
+          <p>
+            <strong>What is a 'diff'?</strong> A <code>diff</code> takes two string of text and finds the differences.
+          </p>
+          </div>
+
+
+        </div>
+
+        <div class="clearfix">
+          <div class="pull-left">
+          <div class="btn-group" id="cleanup-buttons" data-toggle="buttons-radio">
+          <button type="button" class="btn active">Semantic</button>
+          <button type="button" class="btn">Efficiency</button>
+          <button type="button" class="btn">None</button>
+        </div>
+
+
+          </div>
+
+          <div class="pull-right">
+
+        <div class="input-append btn-group">
+          <input class="span2" id="timeout" size="16" type="text" placeholder="1"><span class="add-on">second maximum</span>
+        </div>
+
+          </div>
+        </div>
+            <hr class="minor" />
+            <button class="btn btn-primary" id="launch">Recompute Diff</button> (this happens automatically as you type or drag files onto the page).
+
+        <TABLE WIDTH="100%"><TR>
+          <TD WIDTH="50%">
+        <H3>Text 1:</H3>
+<TEXTAREA ID="text1" ROWS=10>I am the very model of a modern Major-General,
+I've information vegetable, animal, and mineral,
+I know the kings of England, and I quote the fights historical,
+From Marathon to Waterloo, in order categorical.</TEXTAREA>
+      </TD>
+          <TD WIDTH="50%">
+        <H3>Text 2:</H3>
+<TEXTAREA ID="text2" ROWS=10>I am the very model of a cartoon individual,
+My animation's comical, unusual, and whimsical,
+I'm quite adept at funny gags, comedic theory I have read,
+From wicked puns and stupid jokes to anvils that drop on your head.</TEXTAREA>
+      </TD>
+        </TR></TABLE>
+
+
+        <DIV ID="outputdiv"></DIV>
+
+      </div>
+    </div>
+  </div>
+
+  <script type='text/javascript' src='js/jquery-1.8.2.js'></script>
+  <script type='text/javascript' src='js/diff-match-patch.js'></script>
+  <script type='text/javascript' src='js/filereader.js'></script>
+  <script type='text/javascript' src='js/browser-diff.js'></script>
+</body>
+</html>
