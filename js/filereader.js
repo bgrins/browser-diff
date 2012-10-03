@@ -368,7 +368,7 @@
         });
 
         if (worker) {
-            worker.postMessage();
+            worker.postMessage({});
         }
     }
 
@@ -435,6 +435,9 @@
 
     // The interface is supported, bind the FileReaderJS callbacks
     FileReaderJS.enabled = true;
-    checkFileReaderSyncSupport();
+
+    if (FileReaderJS.sync) {
+        checkFileReaderSyncSupport();
+    }
 
 })(this, document);

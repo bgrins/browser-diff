@@ -5,7 +5,7 @@ var FILEREADER_OPTS = {
     load: function(e, file) {
       var el = (loadedFiles % 2) ? "#text2" : "#text1";
       loadedFiles++;
-      $(el).text(e.target.result);
+      $(el).val(e.target.result);
     },
     error: function(e, file) {
     },
@@ -59,6 +59,11 @@ function launch() {
 $(function() {
   $("#launch").click(launch);
   $("textarea").bind("keyup change", launch);
+
+
+  $(".btn-group .btn").bind("click", function() {
+    setTimeout(launch, 10);
+  });
   launch();
 
 

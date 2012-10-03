@@ -17,65 +17,76 @@
     <div class='content'>
       <div class='inner-content'>
 
-        <div class="header">
-
-
-          <H1>browser-diff</H1>
-          <hr />
-
-          <div class="alert alert-info">
-          <h2>Find text differences in your browser</h2>
-          <p>
-            <strong>What is a 'diff'?</strong> A <code>diff</code> takes two string of text and finds the differences.
-          </p>
-          </div>
-
-
-        </div>
 
         <div class="clearfix">
           <div class="pull-left">
-          <div class="btn-group" id="cleanup-buttons" data-toggle="buttons-radio">
-          <button type="button" class="btn active">Semantic</button>
-          <button type="button" class="btn">Efficiency</button>
-          <button type="button" class="btn">None</button>
-        </div>
-
-
+          <H1><a href='/'><img src='img/browser-diff.png' /><span>browser-diff</span></a>
+          </H1>
           </div>
-
-          <div class="pull-right">
-
-        <div class="input-append btn-group">
-          <input class="span2" id="timeout" size="16" type="text" placeholder="1"><span class="add-on">second maximum</span>
+          <div class="pull-right"><small><a href='http://github.com/bgrins/browser-diff'>source code on github</a></small></div>
         </div>
 
-          </div>
-        </div>
-            <hr class="minor" />
-            <button class="btn btn-primary" id="launch">Recompute Diff</button> (this happens automatically as you type or drag files onto the page).
-
-            <div class="pull-right">
-              <input type="file" id="file-input" name="file-input" multiple="">
+        <div class="clearfix">
+            <div class="pull-left">
+              <strong>Find text differences in your browser</strong>
             </div>
+            <div class="pull-right">
+
+            </div>
+        </div>
+
+
+        <hr class="minor" />
+
+        <p>
+          <strong>Try typing in the textareas below.</strong> It will present you with a <code>diff</code> between the two boxes.
+        </p>
+        <p>
+  You can also <strong>drag and drop</strong> files onto the page or choose them here: &nbsp; &nbsp; <input type="file" id="file-input" name="file-input" multiple="">
+        </p>
 
         <TABLE WIDTH="100%"><TR>
           <TD WIDTH="50%">
         <H3>Text 1:</H3>
-<TEXTAREA ID="text1" ROWS=10>I am the very model of a modern Major-General,
+<TEXTAREA ID="text1" ROWS=5>I am the very model of a modern Major-General,
 I've information vegetable, animal, and mineral,
 I know the kings of England, and I quote the fights historical,
 From Marathon to Waterloo, in order categorical.</TEXTAREA>
       </TD>
           <TD WIDTH="50%">
         <H3>Text 2:</H3>
-<TEXTAREA ID="text2" ROWS=10>I am the very model of a cartoon individual,
+<TEXTAREA ID="text2" ROWS=5>I am the very model of a cartoon individual,
 My animation's comical, unusual, and whimsical,
 I'm quite adept at funny gags, comedic theory I have read,
 From wicked puns and stupid jokes to anvils that drop on your head.</TEXTAREA>
       </TD>
         </TR></TABLE>
 
+        <hr />
+      <div class="clearfix">
+        <div class="pull-left">
+        <div class="btn-group" id="cleanup-buttons" data-toggle="buttons-radio">
+        <button type="button" class="btn active">Semantic</button>
+        <button type="button" class="btn">Efficiency</button>
+        <button type="button" class="btn">None</button>
+      </div>
+
+
+        </div>
+
+        <div class="pull-right">
+
+          <div class="input-append btn-group">
+            <input class="span2" id="timeout" size="16" type="text" placeholder="1"><span class="add-on">seconds (before stopping)</span>
+          </div>
+
+        </div>
+      </div>
+      <div class="clearfix" style="margin-top: 3px;">
+        <div class="pull-left"><button class="btn btn-primary" id="launch">Recompute Diff</button> ←
+           <small>This happens automatically as you type or drag files onto the page.</small>
+        </div>
+      </div>
 
         <DIV ID="outputdiv"></DIV>
 

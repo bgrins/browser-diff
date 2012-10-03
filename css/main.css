@@ -2,8 +2,15 @@ body {
   line-height: 1.5;
   background: url(../img/grey.png);
 }
+
+.drag {
+  background: lightgreen;
+}
+
+.drag .container-fluid {
+}
 .container-fluid {
-  min-width: 500px;
+  min-width: 650px;
   overflow: hidden;
 }
 html, body, input, select, textarea {
@@ -36,18 +43,6 @@ h4 {
 .inner-content>h2 {
     margin-top: 30px;
 }
-.steps .span8 h3 {
-    border-bottom: none;
-    color: #444;
-    font-size: 20px;
-}
-.steps img {
-  max-width: 50%;
-  border: solid 2px #333;
-  box-shadow: 0 0 10px #333;
-  display:block;
-  margin: 5px auto;
-}
 .big-link a, .big-link span {
     vertical-align: middle;
 }
@@ -75,7 +70,8 @@ h4 {
     padding: 20px;
     border-right: solid 2px #bbb;
     border-left: solid 2px #bbb;
-    background: rgba(255, 165, 0, 0.14);
+    background: rgba(255, 165, 0, 0.2);
+    box-shadow: 0 0 10px #ccc;
 }
 .inner-content {
     z-index: 2;
@@ -83,8 +79,24 @@ h4 {
     padding: 2px 10px;
 }
 
+h1 a { text-decoration: none; color: #336 !important; }
+h1:hover span { text-decoration: underline; }
+
+h1:hover img {
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+h1 img {
+  height: 30px;
+  margin-top: -7px;
+  vertical-align: middle;
+  display: inline-block;
+  -webkit-transition: all linear .2s;
+  -moz-transition: all linear .2s;
+  transition: all linear .2s;
+}
 input[type=file] {
-  width: 215px;
 }
 
 .row { }
@@ -110,7 +122,7 @@ textarea {
 
 hr.minor {
   padding: 3px 0;
-  margin: 1px 0;
+  margin: 4px 0;
 }
 
 
